@@ -1,4 +1,4 @@
-LIBRARY "CTime"
+LIBRARY "ctime"
 EXPORTS
 	Supports
 	Load
