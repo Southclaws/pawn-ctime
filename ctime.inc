@@ -36,6 +36,3 @@ native ctime(Time: tTime, szBuf[], const iSize = sizeof(szBuf));
 native gmtime(Time: tTime, tm <tmPtr>);
 native localtime(Time: tTime, tm <tmPtr>);
 native strftime(szBuf[], const iSize, const szFormat[], tm <tmPtr>);
-
-stock Time: time()
-	return Time: gettime();
