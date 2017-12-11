@@ -12,9 +12,10 @@ cTime = -D cTime $(COMPILE_FLAGS)
 
 all: cTime
 
-clean: -rm -f *~ *.o *.so
+clean:
+	rm -f *~ *.o *.so
 
 cTime: clean
-	$(GPP) $(cTime) *.cpp
-	$(GPP) $(cTime) ./SDK/*.cpp
+	$(GPP) $(cTime) samp-ctime/*.cpp
+	$(GPP) $(cTime) samp-ctime/SDK/*.cpp
 	$(GPP) -m32 -O2 -fshort-wchar -shared -o $(cTime_OUTFILE) *.o
