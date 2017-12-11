@@ -33,7 +33,7 @@ PLUGIN_EXPORT bool PLUGIN_CALL Load(void **ppData) {
 }
 
 PLUGIN_EXPORT void PLUGIN_CALL Unload() {
-	g_CTime->~CTime();
+	delete g_CTime;
 }
 
 PLUGIN_EXPORT unsigned int PLUGIN_CALL Supports() {
@@ -48,7 +48,8 @@ AMX_NATIVE_INFO amx_Natives[] = {
 	{ "ctime", Natives::CTime_ctime },
 	{ "gmtime", Natives::CTime_gmtime },
 	{ "localtime", Natives::CTime_localtime },
-	{ "strftime", Natives::CTime_strftime }
+	{ "strftime", Natives::CTime_strftime },
+	{0, 0}
 };
 
 PLUGIN_EXPORT int PLUGIN_CALL AmxLoad(AMX *pAMX) {

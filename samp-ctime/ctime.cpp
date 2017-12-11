@@ -12,7 +12,6 @@ CTime::CTime() {
 }
 
 CTime::~CTime() {
-	delete g_CTime;
 }
 
 void CTime::SetTimePointer(tm *tmPtr, cell *iPhysAddr) {
