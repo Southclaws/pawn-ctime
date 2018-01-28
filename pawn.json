@@ -1,0 +1,21 @@
+{
+    "user": "Southclaws",
+    "repo": "samp-ctime",
+    "resources": [
+        {
+            "name": "^ctime.tar.gz$",
+            "platform": "linux",
+            "archive": true,
+            "plugins": ["ctime.so"]
+        },
+        {
+            "name": "^ctime.zip$",
+            "platform": "windows",
+            "archive": true,
+            "plugins": ["ctime.dll"]
+        }
+    ],
+    "runtime": {
+        "plugins": ["Southclaws/samp-ctime"]
+    }
+}
