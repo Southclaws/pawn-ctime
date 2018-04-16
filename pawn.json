@@ -1,11 +1,21 @@
 {
-  "user": "username",
-  "repo": "ctime",
-  "entry": "test/gamemodes/test.pwn",
-  "output": "test/gamemodes/test.amx",
-  "dependencies": ["Southclaws/samp-stdlib"],
-  "dev_dependencies": ["pawn-lang/YSI-Includes"],
+  "user": "Southclaws",
+  "repo": "samp-ctime",
+  "resources": [
+    {
+      "name": "^ctime.tar.gz$",
+      "platform": "linux",
+      "archive": true,
+      "plugins": ["ctime.so"]
+    },
+    {
+      "name": "^ctime.zip$",
+      "platform": "windows",
+      "archive": true,
+      "plugins": ["ctime.dll"]
+    }
+  ],
   "runtime": {
-    "plugins": ["username/ctime"]
+    "plugins": ["Southclaws/samp-ctime"]
   }
 }
