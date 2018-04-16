@@ -1,21 +1,32 @@
-#
-# CTime makefile to compile project on Linux
-#
+# -
+# Setup test requirements
+# -
 
-GPP = g++
-GCC = gcc
-cTime_OUTFILE = "cTime.so"
+test-setup:
+	cd test && sampctl server ensure
+	sampctl package ensure
 
-COMPILE_FLAGS = -m32 -fPIC -c -O3 -w -D LINUX -D PROJECT_NAME=\"cTime\" -I ./amx/
+# -
+# Run Tests
+# -
 
-cTime = -D cTime $(COMPILE_FLAGS)
+test-windows:
+	-cp test/plugins/Debug/ctime.dll test/plugins/ctime.dll
+	sampctl package build
+	cd test && sampctl server run
 
-all: cTime
+test-linux:
+	sampctl package build
+	cd test && sampctl server run --container
 
-clean:
-	rm -f *~ *.o *.so
+# -
+# Build (Linux)
+# -
 
-cTime: clean
-	$(GPP) $(cTime) samp-ctime/*.cpp
-	$(GPP) $(cTime) samp-ctime/SDK/*.cpp
-	$(GPP) -m32 -O2 -fshort-wchar -shared -o $(cTime_OUTFILE) *.o
+build-linux:
+	rm -rf build
+	docker build -t southclaws/ctime-build .
+	docker run -v $(shell pwd)/test/plugins:/root/test/plugins southclaws/ctime-build
+
+build-inside:
+	cd build && cmake .. && make

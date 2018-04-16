@@ -1,7 +1,0 @@
-LIBRARY "ctime"
-EXPORTS
-	Supports
-	Load
-	Unload
-	AmxLoad
-	AmxUnload
