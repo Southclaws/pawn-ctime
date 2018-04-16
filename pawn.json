@@ -3,16 +3,14 @@
   "repo": "samp-ctime",
   "resources": [
     {
-      "name": "^ctime.tar.gz$",
+      "name": "ctime.so",
       "platform": "linux",
-      "archive": true,
-      "plugins": ["ctime.so"]
+      "archive": false
     },
     {
-      "name": "^ctime.zip$",
+      "name": "ctime.dll",
       "platform": "windows",
-      "archive": true,
-      "plugins": ["ctime.dll"]
+      "archive": false
     }
   ],
   "runtime": {
