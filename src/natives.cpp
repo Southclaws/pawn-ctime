@@ -2,12 +2,12 @@
 
 cell Natives::clock(AMX* amx, cell* params)
 {
-    return ::clock();
+    return static_cast<cell>(::clock());
 }
 
 cell Natives::difftime(AMX* amx, cell* params)
 {
-    return (int)::difftime((time_t)params[1], (time_t)params[2]);
+    return static_cast<cell>(::difftime((time_t)params[1], (time_t)params[2]));
 }
 
 cell Natives::mktime(AMX* amx, cell* params)
@@ -28,7 +28,7 @@ cell Natives::mktime(AMX* amx, cell* params)
 
     time_t timestamp = mktime(&timeData);
 
-    return (int)timestamp;
+    return static_cast<cell>(timestamp);
 }
 
 cell Natives::asctime(AMX* amx, cell* params)
