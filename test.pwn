@@ -79,6 +79,8 @@ Test:gmtime() {
 
 Test:localtime() {
     // localtime is dependent on locale so it's left out of unit tests.
+    new time[e_tm]; 
+    localtime(Time:gettime(), time);
 }
 
 Test:strftime() {
