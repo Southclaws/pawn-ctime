@@ -9,6 +9,13 @@
 #endif
 #define _ctime_included
 
+
+#define STRFTIME_ISO6801_TIME       "H:%M:%S"            // 09:55:22
+#define STRFTIME_ISO6801_DATE       "%Y-%m-%d"           // 2018-05-31
+#define STRFTIME_ISO6801_FULL_UTC   "%Y-%m-%dT%H:%M:%SZ" // 2018-05-31T09:55:22Z
+#define STRFTIME_ISO6801_FULL_LOCAL "%Y-%m-%dT%H:%M:%S"  // 2018-05-31T09:55:22
+
+
 enum e_tm {
 	tm_sec,
 	tm_min,
