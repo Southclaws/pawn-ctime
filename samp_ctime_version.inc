@@ -3,5 +3,5 @@
 // To update the version number for a new release, run "sampctl package release"
 
 #define SAMP_CTIME_VERSION_MAJOR (1)
-#define SAMP_CTIME_VERSION_MINOR (1)
+#define SAMP_CTIME_VERSION_MINOR (2)
 #define SAMP_CTIME_VERSION_PATCH (0)
